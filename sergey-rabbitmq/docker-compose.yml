@@ -9,19 +9,18 @@ services:
       APP_PORT: 15672
     
   server:
-    image: rabbitmq:3.9.27
-    restart: on-failure
-    #restart: always
-    user: "1000:1000"
-    init: true
+    image: rabbitmq:3-management-alpine
     ports:
-      - '4369:4369'
-      - '5551:5551'
-      - '5552:5552'
-      - '5672:5672'
-      - '25672:25672'
-      - '15672:15672'
+        - 5672:5672
+        - 15672:15672
     environment:
-      - RABBITMQ_SECURE_PASSWORD=yes
-    volumes:
-      - 'rabbitmq_data:/bitnami/rabbitmq/mnesia'
+        RABBITMQ_DEFAULT_USER=user
+        RABBITMQ_DEFAULT_PASS=bNjPKaV05wJF
+    #volumes:
+    #    - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+    #    - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:15672"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
