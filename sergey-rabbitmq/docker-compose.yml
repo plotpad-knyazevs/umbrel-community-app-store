@@ -6,13 +6,10 @@ services:
     environment:
       # The format here is: <app-id>_<docker-service-name>_1
       APP_HOST: sergey_rabbitmq_server_1
-      APP_PORT: 15672
+      APP_PORT: 3000
     
   server:
     image: rabbitmq:3.10.7-management
-    restart: on-failure
+    restart: always
     user: "1000:1000"
     init: true
-    ports:
-      - 15672:15672
-      - 5672:5672
