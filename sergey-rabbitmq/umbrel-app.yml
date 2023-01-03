@@ -1,5 +1,5 @@
 manifestVersion: 1
-id: rabbitmq
+id: sergey-rabbitmq
 name: RabbitMQ Server
 tagline: Replace this tagline with your app's tagline
 icon: https://www.rabbitmq.com/img/logo-rabbitmq.svg
