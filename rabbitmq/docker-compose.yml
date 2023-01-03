@@ -5,10 +5,14 @@ services:
   app_proxy:
     environment:
       # The format here is: <app-id>_<docker-service-name>_1
-      APP_HOST: sparkles-hello-world_server_1
-      APP_PORT: 3000
+      APP_HOST: rabbitmq_server_1
+      APP_PORT: 15672
     
   server:
-    image: getumbrel/community-app-store-hello-world:latest
+    image: rabbitmq:3.10.7-management
+    restart: on-failure
     user: "1000:1000"
     init: true
+    ports:
+      - 15672:15672
+      - 5672:5672

@@ -1,19 +1,17 @@
 manifestVersion: 1
-id: sparkles-hello-world
-name: Hello World
+id: rabbitmq
+name: RabbitMQ Server
 tagline: Replace this tagline with your app's tagline
-icon: https://svgur.com/i/mvA.svg
+icon: https://www.rabbitmq.com/img/logo-rabbitmq.svg
 category: Development
 version: "1.0.0"
-port: 4000
+port: 15672
 description: >-
-  Add your app's description here.
+  RabbitMQ is the most widely deployed open source message broker.
 
 
-  You can also add newlines!
-
-developer: Umbrel
-website: https://umbrel.com
+developer: RabbitMQ
+website: https://www.rabbitmq.com/
 submitter: Umbrel
 submission: https://github.com/getumbrel/umbrel-hello-world-app
 repo: https://github.com/getumbrel/umbrel-hello-world-app
